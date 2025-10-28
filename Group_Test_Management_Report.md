@@ -1,49 +1,23 @@
-# 🧪 Final Group Test Report — Word Puzzle Game Plus
+# 📊 Group Test Management Report — Word Puzzle Game Plus
 
-**Level:** Intermediate QA | **Week 5:** Test Management
+## 👥 Team Information
 
-**Course:** Software Testing & Quality Assurance  
-**Module:** Test Management (Week 5)  
-**Project Type:** Group Assessment  
-**Submission Date:** 2025-10-28
+| Role | Name | Responsibilities Completed |
+|------|------|---------------------------|
+| Test Manager | Fatahi Showunmi | - Created comprehensive test plan<br>- Managed test schedule and resources<br>- Tracked metrics and progress |
+| Risk Analyst | Dennis Gachuru | - Identified and assessed risks<br>- Designed risk-based test cases<br>- Prioritized testing efforts |
+| Test Executor | Whitney Wairimu | - Executed test cases<br>- Logged and validated defects<br>- Captured test evidence |
 
-## Team Information
-
-| Role | Name | Responsibilities |
-|------|------|------------------|
-| Test Manager | Fatahi Showunmi | Planning, scheduling, coordination, metric tracking |
-| Risk Analyst | Dennis Gachuru | Risk identification, prioritization, test design linkage |
-| Test Executor | Whitney Wairimu | Execution, evidence capture, defect logging |
-
-## Group Rules
-
-- Each student must belong to only one group.
-- Duplicate membership or multiple submissions will result in invalidation.
-- Every group member must contribute towards this project.
-
-## Project Overview
-
-**System Under Test:** Word Puzzle Game Plus  
-**Technology Stack:** HTML, CSS, JavaScript  
-**Environment:** Chrome Browser (Desktop)
-
-### Features Under Test
-
-| Feature | Description | Risk Category |
-|---------|-------------|---------------|
-| Reset Game | Clears score and progress instantly | High |
-| Leaderboard | Stores top 3 scores in localStorage | Medium |
-| Bonus Round | Every 3 puzzles → doubles score | High |
-
-## Test Plan
+## 🎯 Test Plan
 
 ### Objectives
+- Verify functionality of new features: Reset Game, Leaderboard, and Bonus Round
+- Ensure data integrity in localStorage implementation
+- Validate score calculation and bonus round triggers
+- Test UI/UX responsiveness and accessibility
+- Identify and mitigate potential security risks
 
-- Ensure random letter generation and scoring function work correctly.
-- Verify user inputs, hints, and leaderboard persistence operate as expected.
-- Confirm UI updates for 'score', 'solved' and 'Bonus at' are correct and timely.
-
-### Scope 
+### Scope
 
 **In Scope:**
 - User input handling and validation.
@@ -52,37 +26,38 @@
 - Leaderboard persistence and sorting logic.
 
 **Out of Scope:**
-- multiplayer features not implemented
+- Server-side persistence
+- Multiplayer features (not implemented in this project).
 
-### Tools & Resources
+### Resources & Environment
+- **Browser:** Chrome (latest version)
+- **Tools:** VS Code, Github, Chrome DevTool
+- **Test Data:** Word bank entries
+- **Testing Duration:** 4 days
 
-- Chrome (latest stable) — recommended test browser
-- VS Code — development / test scripting
-- GitHub Issues / Projects — defect tracking and collaboration
-- chrome DevTools-UI responsiveness
-
-### Schedule (planned vs actual)
+### Schedule
 
 | Phase | Planned Duration | Actual Duration | Status | Owner |
 |-------|------------------|-----------------|--------|-------|
-| Test planning & risk analysis | 4hrs | 4hrs | Completed | Test Manager / Risk Analyst |
-| Test design | 4hrs | 4hrs | Completed | Risk Analyst |
+| Test planning & risk analysis | 4 hrs | 4 hrs | Completed | Test Manager / Risk Analyst |
+| Test design | 4 hrs | 4 hrs | Completed | Risk Analyst |
 | Test execution | 1 day | 1 day | Completed | Test Executor |
-| Defect triage & retest | 6hrs | 6hrs | completed | All |
-| Final report & sign-off | 8hrs | 8hrs | completed | Test Manager |
+| Defect triage & retest | 6 hrs | 6 hrs | Completed | All |
+| Final report & sign-off | 8 hrs | 8 hrs | Completed | Test Manager |
 
-## Entry & Exit Criteria
+### Entry/Exit Criteria
 
-Entry Criteria:
-- Application run with live server
+**Entry Criteria:**
+- Application ran with live server.
 - Test cases reviewed and signed off by Test Manager.
 - Test data prepared and accessible.
 
-Exit Criteria:
+**Exit Criteria:**
 - All high-severity defects fixed and verified.
-- Pass rate >= 80% for planned test cases 
+- Pass rate >= 80% for planned test cases.
 - Risk coverage >= 80% for identified high/medium risks.
 - Test execution status and metrics documented.
+
 
 ## Risk Analysis
 
@@ -90,12 +65,12 @@ Exit Criteria:
 
 | ID | Feature | Risk Description | Likelihood | Impact | Priority | Mitigation Strategy |
 |----|---------|------------------|------------|--------|----------|---------------------|
-| R-01 | Leaderboard |  incorrect sorting → wrong top-3 shown | Medium | High | High | Add unit tests for sorting;snapshot after updates |
+| R-01 | Leaderboard | Incorrect sorting → wrong top-3 shown | Medium | High | High | Add unit tests for sorting, snapshot after updates |
 | R-02 | Reset Game | State not fully cleared → residual score persists | Low | High | Medium | Add integration test for reset; ensure reset function resets all relevant state variables |
 | R-03 | Bonus Round | Bonus multiplier applied incorrectly (off-by-one) | Medium | Medium | Medium | Add boundary tests for round counters; add logging around multiplier calculation |
 | R-04 | UI Responsiveness | Controls overlap at small widths → usability degradation | Medium | Medium | Medium | Add responsive checks in Chrome DevTools; add simple CSS fixes or constraints |
 | R-05 | Input Validation | Invalid characters break scoring or crash the app | Low | High | Medium | Sanitize and validate inputs; add negative tests for special characters and scripts |
-| R-06 | Persistence | localStorage corruption prevents leaderboard save | Low | Low | Low | Limit stored entries; implement graceful fallback (in-memory) and user notification |
+| R-06 | Persistence | localStorage or corruption prevents leaderboard save | Low | Low | Low | Limit stored entries; implement graceful fallback (in-memory) and user notification |
 
 ### Risk Coverage
 
@@ -104,7 +79,23 @@ Exit Criteria:
 - Tested Risks Percent: 100%
 - Untested Risks Percent: 0%
 
-## Test Cases
+## Reflection
+
+### Risk-Based Approach Impact
+- Prioritized high-risk areas led to early    detection of critical issues
+- Focus on data persistence improved reliability
+- Balanced coverage between features and risks
+
+## Sign-Off
+
+We certify that all planned testing activities have been completed according to the test plan and risk assessment.
+
+| Name | Role | Initials | Date |
+|------|------|-----------|------|
+| Dennis Gachuru | Risk Analyst | DG | 2025-10-28 |
+
+
+### Test Cases
 
 | ID | Feature | Objective | Steps (summary) | Expected Result | Actual Result | Status | Risk Link |
 |----|---------|-----------|-----------------|-----------------|---------------|--------|-----------|
@@ -121,10 +112,10 @@ Total executed: 8 | Passed: 6 | Failed: 2
 
 ## Defects (GitHub Issues)
 
-| ID | Issue Title | Severity | Risk ID | Status | GitHub Link |
-|----|-------------|----------|---------|--------|-------------|
-| D-01 | Game never ends | Medium | R-01 | Open | https://github.com/PLP-Database-Design/wk-5-PixelNjoki-1/issues/2|
-| D-02 | no filtering and verification of input | High | R-05 | open | https://github.com/PLP-Database-Design/wk-5-PixelNjoki-1/issues/3
+| ID | Issue Title       | Severity | Risk ID | Status |
+|----|-------------------|----------|---------|--------|
+| D-01 | Game never ends | Medium   | R-01    | Open |
+| D-02 | no filtering and verification of input | High | R-05 | open |
 
 
 ## Metrics
@@ -134,6 +125,12 @@ Total executed: 8 | Passed: 6 | Failed: 2
 - Risk Coverage Percent: 100% (6 / 6)
 - Regression success rate:0 retest executed
 
+### Defect Distribution
+```
+Critical: 0   
+High:    1 
+Medium:  1   
+Low:     0 
 
 ### Defect Summary
 
@@ -150,37 +147,28 @@ Total executed: 8 | Passed: 6 | Failed: 2
 | Planning | Test plan & risk list | Completed | 2hrs| Test Manager |
 | Design | Test cases documented | Completed | 2hrs | Risk Analyst |
 | Execution | Test execution & evidence | Completed (see table) | 6hrs | Test Executor |
-| Triage | Defect triage & retest | pending | - | All |
+| Triage | Defect triage & retest | pending | - | all |
 | Closure | Final report & sign-off | Pending | - | Test Manager |
 
 **Progress Tracking Method:** GitHub Issues for defects, markdown files, risk analysis ,test cases and this report for metrics.
 
 **Change Control Notes:** Any scope deviation or blocked tests were recorded as issues and communicated via the project board.
 
-## Lessons Learned
+## 💭 Reflection
 
-- Most defect prone feature: User Interface input (R-05) — no filtering and verification of input
-- Risk analysis impact: Prioritizing user input test found high-impact defects early.
-- Team communication effectiveness: Daily short syncs helped coordinate testing
-- Improvements for the next cycle: Add small unit tests for core logic (sorting, multiplier) and automate a smoke test that runs on each push.
+### Team Collaboration Effectiveness
+- Daily sync meetings improved coordination
+- Shared risk analysis enhanced test coverage
+- Clear role definition increased efficiency
 
-## Attachments
+### Improvement Areas
+- Implement automated regression tests
+- Expand browser compatibility testing
+- Add performance metrics tracking
+- Enhance test data generation
 
-- Evidence folder: /docs/evidence/ — place screenshots and console logs here 
-- Issue links: add screenshots and console logs to the GitHub issues listed above.
-
-## Sign Off
-
+## ✅ Sign-Off
 | Name | Role | Initials | Date |
 |------|------|-----------|------|
 | Fatahi Showunmi | Test Manager | FS | 2025-10-28 |
-| Dennis Gachuru | Risk Analyst | DG | 2025-10-28 |
 | Whitney Wairimu | Test Executor | WW | 2025-10-28 |
-
-## Overall Summary
-
-Statement:
-The team executed the planned test cases against the Word Puzzle Game Plus. Most planned test cases passed (75% pass rate). one high-severity defect was identified and still open and one medium-severity defect remains open. The team recommends prioritizing the open defects before final sign-off and adding small automated checks for sorting and input validation.
-
-Test Status: ☐ Completed / ☑ In Progress / ☐ Deferred
-
